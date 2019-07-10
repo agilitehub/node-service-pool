@@ -1,0 +1,45 @@
+{
+  "name": "service-pool",
+  "license": "MIT",
+  "version": "0.0.1",
+  "description": "A simple, lightweight, Resource Pool Manager for NodeJS",
+  "homepage": "https://agilite.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agilitehub/node-service-pool"
+  },
+  "bugs": {
+    "url": "https://github.com/agilitehub/node-service-pool/issues",
+    "email": "support@agilite.io"
+  },
+  "author": "Agilit-e <support@agilite.io>",
+  "contributors": [
+    {
+      "name": "John Jardin",
+      "email": "support@agilite.io",
+      "url": "https://agilite.io"
+    }
+  ],
+  "keywords": [
+    "agilit-e",
+    "agilite",
+    "pool",
+    "pooling"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "engines": {
+    "node": "10.15.2"
+  },
+  "dependencies": {
+    "dotenv": "8.0.0",
+    "type-detect": "4.0.8"
+  },
+  "devDependencies": {
+    "mongoose": "5.6.4",
+    "chai": "4.2.0",
+    "mocha": "6.1.4"
+  }
+}
