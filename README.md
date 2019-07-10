@@ -31,10 +31,7 @@ const id = 'unique-id-value'
 
 const serviceEntry = {
   id,
-  onAdd: function () {
-    const url = 'mongodb://localhost/dbname'
-    return mongoose.createConnection(url)
-  },
+  onAdd: mongoose.createConnection('mongodb://localhost/dbname'),
   onTest: function (service) {
     return service.readyState === 1
   },
