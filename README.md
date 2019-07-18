@@ -41,12 +41,10 @@ const serviceEntry = {
 }
 
 // Step 4: Add service entry to pool
-pool.add(serviceEntry, (err, service) => {
-  // service - the returned connection to MongoDb in this case
-})
+let service = pool.add(serviceEntry) // service[Promise] = the returned connection to MongoDb in this case
 
 // Step 5: Get a service entry by id
-let service = pool.get(id) // service - the returned connection to MongoDb in this case
+let service = pool.get(id) // service[Object] - the returned connection to MongoDb in this case
 
 // Step 6: Test a service entry by id
 let serviceActive = pool.test(id) // serviceActive - A boolean value confirming if the service is active

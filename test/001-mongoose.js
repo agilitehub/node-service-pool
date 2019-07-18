@@ -15,7 +15,7 @@ let id3 = 'id333'
 const config = { max: 2 }
 const pool = new servicePool(config)
 
-const service1 = {
+const serviceEntry1 = {
   id: id1,
   onAdd: mongoose.createConnection('mongodb://127.0.0.1/dbname'),
   onTest: function (service) {
@@ -26,7 +26,7 @@ const service1 = {
   }
 }
 
-const service2 = {
+const serviceEntry2 = {
   id: id2,
   onAdd: mongoose.createConnection('mongodb://127.0.0.1/dbname'),
   onTest: function (service) {
@@ -37,7 +37,7 @@ const service2 = {
   }
 }
 
-const service22 = {
+const serviceEntry22 = {
   id: id2,
   onAdd: mongoose.createConnection('mongodb://127.0.0.1/dbname'),
   onTest: function (service) {
@@ -48,7 +48,7 @@ const service22 = {
   }
 }
 
-const service3 = {
+const serviceEntry3 = {
   id: id3,
   onAdd: mongoose.createConnection('mongodb://127.0.0.1/dbname'),
   onTest: function (service) {
@@ -60,6 +60,10 @@ const service3 = {
 }
 
 describe ('Mongoose', () => {
+  let service1 = null
+  let service2 = null
+  let service3 = null
+
   it ('Check Max Prop is valid', (done) => {
     expect(pool.getConfig()).to.haveOwnProperty('max')
     expect(typeDetect(pool.getConfig().max)).to.equal(enumsTypeDetect.NUMBER)
@@ -67,10 +71,9 @@ describe ('Mongoose', () => {
   })
 
   it ('Create First Pool Entry', (done) => {
-    pool.add(service1, (err, result) => {
-      expect(err).to.equal(null)
+      service1 = pool.add(serviceEntry1)
+      expect(typeDetect(service1)).to.equal(enumsTypeDetect.PROMISE)
       done()
-    })
   })
 
   it ('Test Connection is Active', (done) => {
@@ -94,18 +97,14 @@ describe ('Mongoose', () => {
   })
 
   it ('Create 3 Pool Entries', (done) => {
-    pool.add(service1, (err) => {
-      expect(err).to.equal(null)
-
-      pool.add(service2, (err2) => {
-        expect(err2).to.equal(null)
-
-        pool.add(service3, (err) => {
-          expect(err).to.equal(null)
-          done()
-        })
-      })
-    })
+    service1 = pool.add(serviceEntry1)
+    service2 = pool.add(serviceEntry2)
+    service3 = pool.add(serviceEntry3)
+      
+    expect(typeDetect(service1)).to.equal(enumsTypeDetect.PROMISE)
+    expect(typeDetect(service2)).to.equal(enumsTypeDetect.PROMISE)
+    expect(typeDetect(service3)).to.equal(enumsTypeDetect.PROMISE)
+    done()
   })
 
   it (`Check for ${config.max} Active Service`, (done) => {
@@ -114,10 +113,9 @@ describe ('Mongoose', () => {
   })
 
   it ('Add Duplicate Entry', (done) => {
-    pool.add(service22, (err, result) => {
-      expect(err).to.equal(null)
-      done()
-    })
+    service2 = pool.add(serviceEntry22)
+    expect(typeDetect(service2)).to.equal(enumsTypeDetect.PROMISE)
+    done()
   })
 
   it ('Destroy 2nd Connection', (done) => {
