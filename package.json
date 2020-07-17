@@ -37,7 +37,7 @@
     "type-detect": "4.0.8"
   },
   "devDependencies": {
-    "mongoose": "5.9.24",
+    "mongoose": "5.7.5",
     "chai": "4.2.0",
     "mocha": "8.0.1"
   }
