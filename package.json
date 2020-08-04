@@ -1,7 +1,7 @@
 {
   "name": "service-pool",
   "license": "MIT",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A simple, lightweight, Resource Pool Manager for NodeJS",
   "homepage": "https://agilite.io",
   "repository": {
@@ -33,11 +33,10 @@
     "generic-pool"
   ],
   "dependencies": {
-    "agilite-utils": "7.1.0"
+    "agilite-utils": "7.1.1"
   },
   "devDependencies": {
-    "mongoose": "5.9.20",
     "chai": "4.2.0",
-    "mocha": "8.0.1"
+    "mocha": "8.1.0"
   }
 }
