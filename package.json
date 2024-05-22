@@ -1,7 +1,7 @@
 {
   "name": "service-pool",
   "license": "MIT",
-  "version": "2.3.0-rc-1",
+  "version": "2.3.0-rc-5",
   "description": "A simple, lightweight, Resource Pool Manager for NodeJS",
   "homepage": "https://agilite.io",
   "repository": {
@@ -20,9 +20,11 @@
       "url": "https://agilite.io"
     }
   ],
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --reporter mochawesome",
+    "build": "npx prettier --write . && tsc",
+    "deploy": "npx prettier --check . && tsc && npm publish"
   },
   "keywords": [
     "agilit-e",
@@ -36,7 +38,13 @@
     "agilite-utils": "7.6.0-rc-1"
   },
   "devDependencies": {
+    "@types/axios": "0.14.0",
+    "@types/node": "^20.12.12",
     "chai": "5.1.1",
-    "mocha": "10.4.0"
+    "eslint": "9.3.0",
+    "mocha": "10.4.0",
+    "mochawesome": "7.1.3",
+    "prettier": "3.2.5",
+    "typescript": "5.4.5"
   }
 }
