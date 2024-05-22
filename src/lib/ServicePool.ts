@@ -4,7 +4,7 @@ import TypeDetect from 'agilite-utils/type-detect'
 import EnumsTypeDetect from 'agilite-utils/enums-type-detect'
 import Enums from './Enums'
 
-class ServicePool {
+export default class ServicePool {
   max: any
   pool: {}
 
@@ -92,5 +92,3 @@ class ServicePool {
     return result
   }
 }
-
-module.exports = ServicePool

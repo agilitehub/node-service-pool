@@ -1,1 +1,3 @@
-module.exports = require('./lib/ServicePool')
+import ServicePool from './lib/ServicePool'
+
+export default ServicePool
