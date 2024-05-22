@@ -1,11 +1,13 @@
 'use strict'
 
-const mongoose = require('mongoose')
-const expect = require('chai').expect
-const TypeDetect = require('agilite-utils/type-detect')
-const EnumsTypeDetect = require('agilite-utils/enums-type-detect')
+import { expect } from 'chai'
 
-const ServicePool = require('../lib/ServicePool')
+import mongoose from 'mongoose'
+
+import TypeDetect from 'agilite-utils/type-detect.js'
+import EnumsTypeDetect from 'agilite-utils/enums-type-detect.js'
+
+import ServicePool from '../dist/index.js'
 
 const id1 = 'id111'
 const id2 = 'id222'
@@ -71,7 +73,7 @@ describe('Mongoose', () => {
 
   it('Create First Pool Entry', (done) => {
     service1 = pool.add(serviceEntry1)
-    expect(EnumsTypeDetect(service1)).to.equal(EnumsTypeDetect.PROMISE)
+    expect(TypeDetect(service1)).to.equal(EnumsTypeDetect.PROMISE)
     done()
   })
 

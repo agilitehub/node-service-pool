@@ -7,6 +7,9 @@ dist/
 build/
 out/
 lib/
+mochawesome-report/
+logs/
+coverage/
 
 # Ignore development and test files
 node_modules/

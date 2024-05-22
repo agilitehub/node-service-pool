@@ -1,5 +1,5 @@
 'use strict'
 
-module.exports = {
+export default {
   MAX_POOL_SIZE: 0
 }

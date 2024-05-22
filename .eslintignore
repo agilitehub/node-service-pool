@@ -1,0 +1,22 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore build output directory
+build/
+dist/
+
+# Ignore coverage reports directory
+coverage/
+
+# Ignore logs directory
+logs/
+mochawesome-report/
+
+# Ignore any files or directories starting with a dot
+.*
+
+# Ignore any files with a .md extension
+*.md
+
+# Ignore any files with a .txt extension
+*.txt
