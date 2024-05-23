@@ -1,7 +1,7 @@
 {
   "name": "service-pool",
   "license": "MIT",
-  "version": "2.3.0-rc-6",
+  "version": "2.3.0-rc-7",
   "description": "A simple, lightweight, Resource Pool Manager for NodeJS",
   "homepage": "https://agilite.io",
   "repository": {
