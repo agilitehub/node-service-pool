@@ -1,7 +1,7 @@
 'use strict'
 
-import TypeDetect from 'agilite-utils/type-detect'
-import EnumsTypeDetect from 'agilite-utils/enums-type-detect'
+import TypeDetect from 'agilite-utils/dist/type-detect'
+import EnumsTypeDetect from 'agilite-utils/dist/enums-type-detect'
 import Enums from './Enums'
 
 export default class ServicePool {

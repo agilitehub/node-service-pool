@@ -35,7 +35,7 @@
     "generic-pool"
   ],
   "dependencies": {
-    "agilite-utils": "7.6.0-rc-1"
+    "agilite-utils": "7.6.0-rc-5"
   },
   "devDependencies": {
     "@types/axios": "0.14.0",
